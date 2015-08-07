@@ -1,34 +1,23 @@
-require 'smsapi/client/version'
-require 'smsapi/sms'
-require 'smsapi/bulk_sms'
-
-module SMSapi
+module SMSApi
   class Client
-    class << self
-      def send(args)
-        # eg.
-        # sms = SMS.new(defaults.merge(args))
-        # sms.send
-        # sms
-      end
+    def initialize(username, password)
+      @server = Server.new(username, password)
+    end
 
-      def send_bulk(args)
-        # eg.
-        # bulk_sms = BulkSMS.new(defaults.merge(args))
-        # bulk_sms.send
-        # bulk_sms
-      end
+    def send_single(to, message, options = {})
+      SMS.new(to, message, @server, options).deliver
+    end
 
-      def details
-      end
+    def schedule_single(to, message, date, options = {})
+      SMS.new(to, message, @server, options).deliver_at(date)
+    end
 
-      private
+    def send_bulk(to, message, options = {})
+      BulkSMS.new(to, message, @server, options).deliver
+    end
 
-      def defaults
-        {
-          type: :eco
-        }
-      end
+    def details
+      # not implemented
     end
   end
 end

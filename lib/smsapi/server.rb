@@ -1,25 +1,33 @@
 module SMSApi
   class Server
-    class Error < StandardError; end
-    class ConnectionRefused < Error; end
-    # etc.
+    def initialize(username, password)
+      @username = username
+      @password = password
+      @connection = setup_connection
+    end
 
-    class << self
-      def configure(username, password)
-      end
+    def sms(params = {})
+      api_response = make_request(SMSApi::API[:sms_path], params)
+      api_response.split(';')
+    end
 
-      def configured?
-        @username.present? and @password.present?
-      end
+    private
 
-      def verify_connection
-        true
-      end
+    def setup_connection
+      SMSApi::Server::Connection.new(
+        SMSApi::API[:uri],
+        SMSApi::API[:port]
+      )
+    end
 
-      def send
-        configure unless configured?
-        {}
-      end
+    def make_request(path, params)
+      params = authorize_params(params)
+      response = @connection.post(path, params)
+      response.body
+    end
+
+    def authorize_params(params)
+      params.merge(username: @username, password: @password)
     end
   end
 end

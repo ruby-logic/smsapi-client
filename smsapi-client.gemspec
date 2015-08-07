@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'smsapi/client/version'
+require 'smsapi/smsapi'
 
 Gem::Specification.new do |spec|
   spec.name          = "smsapi-client"
-  spec.version       = Smsapi::Client::VERSION
+  spec.version       = SMSApi::VERSION
   spec.authors       = ["Alek Niemczyk", "Marek Machula", "Marcin Drozd", "Michal Musialik"]
   spec.email         = ["info@rubylogic.pl"]
 
