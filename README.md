@@ -1,8 +1,4 @@
-# Smsapi::Client
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/smsapi/client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+# SMSApi::Client
 
 ## Installation
 
@@ -22,7 +18,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Create the client
+client = SMSApi::Client.new('username', 'password')
+
+# Send a single text message
+sms = client.send_single 500500500, 'Text Message'
+sms.status   # 'OK'
+sms.success? # => true
+sms.points   # => 0.12
+
+# When something goes wrong
+sms.status        # 'ERROR'
+sms.success?      # => false
+sms.error?        # => true
+sms.error_code    # => 101
+sms.error_message # => 'Bad Credentials'
+
+# Any additional options can be passed as last argument
+sms = client.send_single 500500500, 'Text Message', test: '1'
+
+# Schedule a single message to be sent in the future
+when = DateTime.new(2015, 10, 10)
+sms = client.schedule_single 500500500, 'Text Message', when
+
+# Sending messages in bulk
+bulk = client.send_bulk [500500500, 600600600, 7007007], 'Text Message', test: '1'
+
+# Gives access to an array of sent messages
+bulk.sent
+bulk.sent.first.success? # => true
+
+# The api returns only statuses for successful messages. Since one of our
+# numbers was too short the array contains only 2 items.
+bulk.sent.count # => 2
+```
 
 ## Development
 
