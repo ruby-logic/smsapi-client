@@ -1,11 +1,11 @@
-# SMSApi::Client
+# Smsapi::Client
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'smsapi-client'
+gem 'smsapi-client', '~> 0.2'
 ```
 
 And then execute:
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ```ruby
 # Create the client
-client = SMSApi::Client.new('username', 'password')
+client = Smsapi::Client.new('username', 'password')
 
 # Send a single text message
 sms = client.send_single 500500500, 'Text Message'

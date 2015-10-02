@@ -6,11 +6,11 @@ require 'smsapi/sms'
 require 'smsapi/bulk_sms'
 require 'smsapi/group_sms'
 
-module SMSApi
+module Smsapi
   class Error < StandardError; end
   class ServerError < Error; end
 
-  VERSION = "0.1.0"
+  VERSION = "0.2.0"
   API = {
     uri: 'ssl.smsapi.pl',
     port: 443,

@@ -1,4 +1,4 @@
-module SMSApi
+module Smsapi
   class Server
     def initialize(username, password)
       @username = username
@@ -7,16 +7,16 @@ module SMSApi
     end
 
     def sms(params = {})
-      api_response = make_request(SMSApi::API[:sms_path], params)
+      api_response = make_request(Smsapi::API[:sms_path], params)
       api_response.split(';')
     end
 
     private
 
     def setup_connection
-      SMSApi::Server::Connection.new(
-        SMSApi::API[:uri],
-        SMSApi::API[:port]
+      Smsapi::Server::Connection.new(
+        Smsapi::API[:uri],
+        Smsapi::API[:port]
       )
     end
 

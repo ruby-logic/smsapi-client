@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe SMSApi::Client do
+describe Smsapi::Client do
   before do
     @server = double 'server'
-    allow(SMSApi::Server).to receive_messages(
+    allow(Smsapi::Server).to receive_messages(
       new: @server
     )
 
     @sms = double 'sms',
       deliver: 'OK:123:0.5'
-    allow(SMSApi::SMS).to receive_messages(
+    allow(Smsapi::SMS).to receive_messages(
       new: @sms
     )
   end
@@ -19,7 +19,7 @@ describe SMSApi::Client do
   it 'builds a server connection' do
     username = 'test'
     password = '123123123'
-    expect(SMSApi::Server).to receive(:new).with(username, password)
+    expect(Smsapi::Server).to receive(:new).with(username, password)
 
     described_class.new(username, password)
   end
@@ -28,7 +28,7 @@ describe SMSApi::Client do
     let(:client) { described_class.new('username', 'password') }
 
     it 'creates a SMS' do
-      expect(SMSApi::SMS).to receive(:new)
+      expect(Smsapi::SMS).to receive(:new)
       client.send_single('500000000', 'message')
     end
 
@@ -49,7 +49,7 @@ describe SMSApi::Client do
         'Message',
       ]
 
-      expect(SMSApi::SMS).to receive(:new).with(*expected)
+      expect(Smsapi::SMS).to receive(:new).with(*expected)
       client.send_single(*given)
     end
   end

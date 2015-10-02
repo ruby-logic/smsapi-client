@@ -1,6 +1,6 @@
 require 'net/http'
 
-module SMSApi
+module Smsapi
   class Server
     class Connection
       def initialize(uri, port)

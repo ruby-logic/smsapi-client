@@ -5,7 +5,7 @@ require 'smsapi/smsapi'
 
 Gem::Specification.new do |spec|
   spec.name          = "smsapi-client"
-  spec.version       = SMSApi::VERSION
+  spec.version       = Smsapi::VERSION
   spec.authors       = ["Alek Niemczyk", "Marek Machula", "Marcin Drozd", "Michal Musialik"]
   spec.email         = ["info@rubylogic.pl"]
 

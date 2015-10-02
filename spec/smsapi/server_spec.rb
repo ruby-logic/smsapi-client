@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SMSApi::Server do
+describe Smsapi::Server do
   before do
     @response = double(
       body: 'OK:12312:0.5'
@@ -8,7 +8,7 @@ describe SMSApi::Server do
     @connection = double(
       post: @response
     )
-    allow(SMSApi::Server::Connection).to receive(:new).and_return @connection
+    allow(Smsapi::Server::Connection).to receive(:new).and_return @connection
   end
 
   let(:username) { 'username' }
@@ -16,7 +16,7 @@ describe SMSApi::Server do
   let(:server) { described_class.new(username, password) }
 
   it 'sets up a connection' do
-    expect(SMSApi::Server::Connection).to receive(:new)
+    expect(Smsapi::Server::Connection).to receive(:new)
     server
   end
 

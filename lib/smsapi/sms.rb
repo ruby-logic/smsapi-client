@@ -1,6 +1,6 @@
-module SMSApi
+module Smsapi
   class SMS
-    include SMSApi::Defaults
+    include Smsapi::Defaults
 
     attr_accessor :to, :message, :id, :points, :status, :error_code, :date
     def initialize(to, message, server, options = {})
@@ -36,7 +36,7 @@ module SMSApi
     end
 
     def error_message
-      SMSApi::ERROR_MESSAGES[error_code]
+      Smsapi::ERROR_MESSAGES[error_code]
     end
 
     def read_response(response)
