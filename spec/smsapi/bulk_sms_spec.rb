@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe SMSApi::BulkSMS do
+describe Smsapi::BulkSMS do
 end

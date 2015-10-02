@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe SMSApi::SMS do
+describe Smsapi::SMS do
 end

@@ -1,4 +1,4 @@
-module SMSApi
+module Smsapi
   class Client
     def initialize(username, password)
       @server = Server.new(username, password)

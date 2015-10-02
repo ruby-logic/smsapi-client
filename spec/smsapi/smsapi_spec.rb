@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe SMSApi do
+describe Smsapi do
   it 'has a version number' do
-    expect(SMSApi::VERSION).not_to be nil
+    expect(Smsapi::VERSION).not_to be nil
   end
 end
 

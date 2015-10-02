@@ -1,6 +1,6 @@
-module SMSApi
+module Smsapi
   class BulkSMS
-    include SMSApi::Defaults
+    include Smsapi::Defaults
 
     attr_reader :sent, :to, :message
     def initialize(to, message, server, options = {})

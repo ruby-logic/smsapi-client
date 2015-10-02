@@ -1,4 +1,4 @@
-module SMSApi::Defaults
+module Smsapi::Defaults
   def default_options
     {
       from: 'eco',
