@@ -6,6 +6,11 @@ module Smsapi
       @connection = setup_connection
     end
 
+    def user(params = {})
+      api_response = make_request(Smsapi::API[:user_path], params)
+      api_response.split(';')
+    end
+
     def sms(params = {})
       api_response = make_request(Smsapi::API[:sms_path], params)
       api_response.split(';')

@@ -24,6 +24,19 @@ describe Smsapi::Client do
     described_class.new(username, password)
   end
 
+  describe '#credits' do
+    let(:client) { described_class.new('username', 'password') }
+
+    xit 'get details' do
+      expected = [
+        @server,
+        {}
+      ]
+      expect(Smsapi::Credits).to receive(:new).with(*expected)
+      client.credits
+    end
+  end
+
   describe '#send_single' do
     let(:client) { described_class.new('username', 'password') }
 
@@ -55,10 +68,6 @@ describe Smsapi::Client do
   end
 
   describe '#send_bulk' do
-    pending 'Not implemented'
-  end
-
-  describe '#details' do
     pending 'Not implemented'
   end
 end

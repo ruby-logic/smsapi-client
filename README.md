@@ -22,6 +22,15 @@ Or install it yourself as:
 # Create the client
 client = Smsapi::Client.new('username', 'password')
 
+# Get credits (account details)
+credits = client.credits
+credits.balance        # => 2.6600
+credits.pro_sms_limit  # => 16
+credits.eco_sms_limit  # => 38
+credits.mms_limit      # => 8
+credits.vms_gsm_limit  # => 26
+credits.vms_stac_limit # => 26
+
 # Send a single text message
 sms = client.send_single 500500500, 'Text Message'
 sms.status   # 'OK'
