@@ -20,13 +20,13 @@ Or install it yourself as:
 
 ## Usage
 
+# Be sure you have a username and a password. You can obtain your credentials on [SMSAPI.pl](http://smsapi.pl)
+
 ```ruby
 # Include the library
 require 'smsapi/smsapi'
 
 # Create the client
-
-Initialize the client using username and password. You can get your credentials on [SMSAPI.pl](http://smsapi.pl)
 
 client = Smsapi::Client.new('username', 'password')
 
