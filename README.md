@@ -5,7 +5,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'smsapi-client', '~> 0.2'
+gem 'smsapi-client', '~> 0.3'
 ```
 
 And then execute:
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install smsapi-client
+    $ gem install smsapi-client -v '~> 0.3'
 
 ## Usage
 
