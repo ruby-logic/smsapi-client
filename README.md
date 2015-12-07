@@ -1,5 +1,7 @@
 # Smsapi::Client
 
+Smsapi::Client is a Ruby implementation for SMSAPI.pl gateway
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -19,6 +21,9 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
+# Include the library
+require 'smsapi/smsapi'
+
 # Create the client
 client = Smsapi::Client.new('username', 'password')
 
