@@ -1,6 +1,6 @@
 # Smsapi::Client
 
-Smsapi::Client is a Ruby implementation for SMSAPI.pl gateway
+Smsapi::Client is a Ruby implementation for SMSAPI.pl gateway created by [Ruby Logic](http://rubylogic.pl)
 
 ## Installation
 
@@ -25,6 +25,9 @@ Or install it yourself as:
 require 'smsapi/smsapi'
 
 # Create the client
+
+Initialize the client using username and password. You can get your credentials on [SMSAPI.pl](http://smsapi.pl)
+
 client = Smsapi::Client.new('username', 'password')
 
 # Get credits (account details)
@@ -76,7 +79,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/smsapi-client/fork )
+1. Fork it ( https://github.com/rubylogicgems/smsapi-client/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

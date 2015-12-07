@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["info@rubylogic.pl"]
 
   spec.summary       = 'SMSAPI.pl Ruby client'
-  spec.description   = 'SMSAPI.pl Ruby client'
+  spec.description   = 'SMSAPI.pl Ruby client created by Ruby Logic'
   spec.homepage      = 'https://github.com/rubylogicgems/smsapi-client'
   spec.license       = "MIT"
 
