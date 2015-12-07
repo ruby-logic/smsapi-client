@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-# Be sure you have a username and a password. You can obtain your credentials on [SMSAPI.pl](http://smsapi.pl)
+Be sure you have a username and a password. You can obtain your credentials on [SMSAPI.pl](http://smsapi.pl)
 
 ```ruby
 # Include the library
