@@ -3,6 +3,10 @@ module Smsapi
     include Smsapi::Defaults
 
     attr_accessor :to, :message, :id, :points, :status, :error_code, :date
+
+    SUCCESS_STRING = 'OK'
+    ERROR_STRING = 'ERROR'
+
     def initialize(to, message, server, options = {})
       @options = default_options.merge options
       @to = to
@@ -28,11 +32,11 @@ module Smsapi
     end
 
     def error?
-      self.status == 'ERROR'
+      self.status == ERROR_STRING
     end
 
     def success?
-      self.status == 'SUCCESS'
+      self.status == SUCCESS_STRING
     end
 
     def error_message
@@ -43,11 +47,11 @@ module Smsapi
       response = response.split(':')
 
       self.status = response[0]
-      if status == 'ERROR'
+      if status == ERROR_STRING
         self.error_code = response[1]
       else
         self.id = response[1]
-        self.points = response[2]
+        self.points = response[2].to_f
       end
     end
 
