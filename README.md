@@ -55,6 +55,9 @@ sms.error_message # => 'Bad Credentials'
 # Any additional options can be passed as last argument
 sms = client.send_single 500500500, 'Text Message', test: '1'
 
+# Sending a single PRO message. Remember to get authorisation for the name here: https://ssl.smsapi.pl/sms_settings/sendernames
+sms = client.send_single 500500500, 'Text Message', from: 'Ruby Logic'
+
 # Schedule a single message to be sent in the future
 when = DateTime.new(2015, 10, 10)
 sms = client.schedule_single 500500500, 'Text Message', when
@@ -75,11 +78,11 @@ bulk.sent.count # => 2
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `smsapi.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-1. Fork it ( https://github.com/rubylogicgems/smsapi-client/fork )
+1. Fork it ( https://github.com/ruby-logic/smsapi-client/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

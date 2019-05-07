@@ -6,12 +6,12 @@ require 'smsapi/smsapi'
 Gem::Specification.new do |spec|
   spec.name          = "smsapi-client"
   spec.version       = Smsapi::VERSION
-  spec.authors       = ["Alek Niemczyk", "Marek Machula", "Marcin Drozd", "Michal Musialik"]
-  spec.email         = ["info@rubylogic.pl"]
+  spec.authors       = ['Alek Niemczyk', 'Michal Musialik', 'Marek Machula']
+  spec.email         = ['info@rubylogic.pl']
 
   spec.summary       = 'SMSAPI.pl Ruby client'
-  spec.description   = 'SMSAPI.pl Ruby client created by Ruby Logic'
-  spec.homepage      = 'https://github.com/rubylogicgems/smsapi-client'
+  spec.description   = 'SMSAPI.pl Ruby client created by Ruby Logic S.C.'
+  spec.homepage      = 'https://github.com/ruby-logic/smsapi-client'
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

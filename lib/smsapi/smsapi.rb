@@ -11,7 +11,7 @@ module Smsapi
   class Error < StandardError; end
   class ServerError < Error; end
 
-  VERSION = "0.3.0"
+  VERSION = '0.3.1'
   API = {
     uri: 'ssl.smsapi.pl',
     port: 443,
