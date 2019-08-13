@@ -1,8 +1,7 @@
 module Smsapi
   class Server
-    def initialize(username, password)
-      @username = username
-      @password = password
+    def initialize(token)
+      @token = token
       @connection = setup_connection
     end
 
@@ -21,18 +20,13 @@ module Smsapi
     def setup_connection
       Smsapi::Server::Connection.new(
         Smsapi::API[:uri],
-        Smsapi::API[:port]
+        Smsapi::API[:port],
+        @token
       )
     end
 
     def make_request(path, params)
-      params = authorize_params(params)
-      response = @connection.post(path, params)
-      response.body
-    end
-
-    def authorize_params(params)
-      params.merge(username: @username, password: @password)
+      @connection.post(path, params).body
     end
   end
 end

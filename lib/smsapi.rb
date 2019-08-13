@@ -1,3 +1,4 @@
+require_relative 'smsapi/client/version'
 require 'smsapi/server'
 require 'smsapi/server/connection'
 require 'smsapi/client'
@@ -11,7 +12,6 @@ module Smsapi
   class Error < StandardError; end
   class ServerError < Error; end
 
-  VERSION = '0.3.1'
   API = {
     uri: 'ssl.smsapi.pl',
     port: 443,

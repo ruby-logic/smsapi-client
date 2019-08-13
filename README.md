@@ -7,7 +7,7 @@ Smsapi::Client is a Ruby implementation for SMSAPI.pl gateway created by [Ruby L
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'smsapi-client', '~> 0.3'
+gem 'smsapi-client', '~> 1.0'
 ```
 
 And then execute:
@@ -16,19 +16,19 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install smsapi-client -v '~> 0.3'
+    $ gem install smsapi-client -v '~> 1.0'
 
 ## Usage
 
-Be sure you have a username and a password. You can obtain your credentials on [SMSAPI.pl](http://smsapi.pl)
+Be sure you have a token. You can obtain it on [SMSAPI.pl](http://smsapi.pl)
 
 ```ruby
 # Include the library
-require 'smsapi/smsapi'
+require 'smsapi'
 
 # Create the client
 
-client = Smsapi::Client.new('username', 'password')
+client = Smsapi::Client.new('your_secret_token')
 
 # Get credits (account details)
 credits = client.credits
