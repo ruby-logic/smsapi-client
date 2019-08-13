@@ -14,18 +14,17 @@ describe Smsapi::Client do
     )
   end
 
-  subject { described_class.new('username', 'password') }
+  subject { described_class.new('token123') }
 
   it 'builds a server connection' do
-    username = 'test'
-    password = '123123123'
-    expect(Smsapi::Server).to receive(:new).with(username, password)
+    token = 'token123'
+    expect(Smsapi::Server).to receive(:new).with(token)
 
-    described_class.new(username, password)
+    described_class.new(token)
   end
 
   describe '#credits' do
-    let(:client) { described_class.new('username', 'password') }
+    let(:client) { described_class.new('token123') }
 
     xit 'get details' do
       expected = [
@@ -38,7 +37,7 @@ describe Smsapi::Client do
   end
 
   describe '#send_single' do
-    let(:client) { described_class.new('username', 'password') }
+    let(:client) { described_class.new('token123') }
 
     it 'creates a SMS' do
       expect(Smsapi::SMS).to receive(:new)

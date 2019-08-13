@@ -1,7 +1,7 @@
 module Smsapi
   class Client
-    def initialize(username, password)
-      @server = Smsapi::Server.new(username, password)
+    def initialize(token)
+      @server = Smsapi::Server.new(token)
     end
 
     def credits(options = {})

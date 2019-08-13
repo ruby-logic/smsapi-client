@@ -11,9 +11,8 @@ describe Smsapi::Server do
     allow(Smsapi::Server::Connection).to receive(:new).and_return @connection
   end
 
-  let(:username) { 'username' }
-  let(:password) { 'password' }
-  let(:server) { described_class.new(username, password) }
+  let(:token) { 'token123' }
+  let(:server) { described_class.new(token) }
 
   it 'sets up a connection' do
     expect(Smsapi::Server::Connection).to receive(:new)
@@ -23,8 +22,6 @@ describe Smsapi::Server do
   describe '#sms' do
     it 'makes a post request to /sms.do and appends username and password' do
       expected = {
-        username: username,
-        password: password,
         to: '123',
         message: 'TEST MESSAGE'
       }
