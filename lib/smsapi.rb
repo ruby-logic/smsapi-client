@@ -1,4 +1,4 @@
-require_relative 'smsapi/version'
+require_relative 'smsapi/client/version'
 require 'smsapi/server'
 require 'smsapi/server/connection'
 require 'smsapi/client'
