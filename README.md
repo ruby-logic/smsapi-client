@@ -18,6 +18,8 @@ Or install it yourself as:
 
     $ gem install smsapi-client -v '~> 1.0'
 
+If for some reason you wish to use the old authentication method that requires providing login and password, you still can. Just install version `~> 0.3`.
+
 ## Usage
 
 Be sure you have a token. You can obtain it on [SMSAPI.pl](http://smsapi.pl)
