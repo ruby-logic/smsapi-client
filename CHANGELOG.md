@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Changed
 - Added info about old authentication method to README
+- UTF-8 encoding added to default options
 
 ## [1.0.0] - 2019-08-13
 ### Added
